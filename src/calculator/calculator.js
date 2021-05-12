@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-
-import Button from "react-bootstrap/Button";
+import Display from './display';
 
 export class Calculator extends Component {
   constructor(props) {
@@ -81,7 +80,7 @@ export class Calculator extends Component {
     };
   }
 
-  handleClick(val) {
+  handleClick = (val) => {
     if (val.type === "number") {
       this.handleAddNumber(val.input);
     } else if (val.type === "operator") {
@@ -127,7 +126,6 @@ export class Calculator extends Component {
 		let secondFigure = parseFloat(this.state.secondFigure.join(''));
 		let operator = this.state.operator;
 		// Calculate result
-
 		let result = eval(firstFigure + operator + secondFigure);
 		this.setState({result: result});
 
@@ -140,21 +138,7 @@ export class Calculator extends Component {
   render() {
     return (
       <div>
-        <h1> {this.state.message}, resultado: {this.state.result} </h1>{" "}
-        <div className="container row w-50">
-          {" "}
-          {this.state.buttons.map((val) => (
-            <div className="col-3">
-              <Button
-                variant="primary"
-                className="w-100 m-2"
-                onClick={() => this.handleClick(val)}
-              >
-                {val.input}{" "}
-              </Button>{" "}
-            </div>
-          ))}{" "}
-        </div>{" "}
+        <Display parentState = {this.state} handleClick = {this.handleClick}  />
       </div>
     );
   }
