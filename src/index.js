@@ -2,15 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-import Calculator from './calculator/calculator';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
+
 
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Calculator />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
