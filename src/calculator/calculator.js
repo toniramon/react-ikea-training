@@ -6,7 +6,7 @@ export class Calculator extends Component {
     super(props);
 
     this.state = {
-      message: "Hey!",
+      message: "Hej, this is IKEA Formation. ",
       firstFigure: '',
       secondFigure: '',
       result: 0,
